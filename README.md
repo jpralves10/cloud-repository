@@ -12,8 +12,8 @@ Passo 2. Entrar em "Minha chave de acesso" <br>
 Passo 3. Na sessão "Chaves de acesso (ID da chave..." clicar em "Criar nova chave de acesso" <br>
 Passo 4. No Console digitar:  <br>
 $ aws configure --profile "terraform" <br>
-AWS Access Key ID [None]: AKIAIOAAODNN7EXAMPLE <br>
-AWS Secret Access Key [None]: wJalrXUtnCRMI/K7MDENG/bPxRfiCYEXAMPLEKEY <br>
+AWS Access Key ID [None]: AKIAIOA7ODMN7EXAMPLE <br>
+AWS Secret Access Key [None]: wJaIrXUtnCRNI/K7MDSNG/bPxRfiAYEXAMPLEKEY <br>
 Default region name [None]: us-east-1 <br>
 Default output format [None]: json <br>
 
