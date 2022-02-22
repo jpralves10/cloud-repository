@@ -1,0 +1,12 @@
+*** Listar Tabelas ***
+aws dynamodb --endpoint=http://localhost:8000 list-tables
+
+
+*** Deletar Tabela ***
+aws dynamodb --endpoint=http://localhost:8000 delete-table --table-name <nome_tabela>
+
+
+*** Create/Put Tabela ***
+aws --endpoint-url=http://localhost:8000 dynamodb create-table --table-name <nome_tabela> --attribute-definitions AttributeName=<nome_atributo1>,AttributeType=N AttributeName=<nome_atributo2>,AttributeType=S --key-schema AttributeName=<nome_atributo1>,KeyType=HASH AttributeName=<nome_atributo2>,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
+
+aws --endpoint-url=http://localhost:8000 dynamodb put-item --table-name <nome_tabela> --item "{\"cod_ambi_apli\":{\"S\":\"1\"},\"nom_empr_apli\":{\"S\":\"Employer\"},\"txt_empr_apli\":{\"S\":\"Teste\"}}" --return-consumed-capacity TOTAL

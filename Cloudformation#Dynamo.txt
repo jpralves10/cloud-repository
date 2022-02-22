@@ -1,0 +1,83 @@
+#### Cloudformation Dynamodb ####
+
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Parameters": {
+		"ValorBillingModeTabela100": {
+			"Type": "String"
+		},
+		"ValorBillingModeTabela101": {
+			"Type": "String"
+		}
+	},
+	"Resources": {
+		"Employeer": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [
+					{
+						"AttributeName": "cod_cont_apli",
+						"AttributeType": "S"
+					},
+					{
+						"AttributeName": "cod_empr_apli",
+						"AttributeType": "S"
+					}
+				],
+				"BillingMode": {
+					"Ref": ValorBillingModeTabela100
+				},
+				"KeySchema": [
+					{
+						"AttributeName": "cod_cont_apli",
+						"KeyType": "HASH"
+					},
+					{
+						"AttributeName": "cod_empr_apli",
+						"KeyType": "RANGE"
+					}
+				],
+				"TableName": "tabela100_employeer"
+			}
+		},
+		"Employee": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [
+					{
+						"AttributeName": "cod_cont_apli",
+						"AttributeType": "S"
+					},
+					{
+						"AttributeName": "cod_empe_apli",
+						"AttributeType": "S"
+					}
+				],
+				"BillingMode": {
+					"Ref": ValorBillingModeTabela101
+				},
+				"KeySchema": [
+					{
+						"AttributeName": "cod_cont_apli",
+						"KeyType": "HASH"
+					},
+					{
+						"AttributeName": "cod_empe_apli",
+						"KeyType": "RANGE"
+					}
+				],
+				"TableName": "tabela101_employee"
+			}
+		}
+	}
+}
+
+
+---- parameters-dev.json ----
+
+{
+	"Parameters": {
+		"ValorBillingModeTabela101": "PAY_PER_REQUEST",
+		"ValorBillingModeTabela102": "PAY_PER_REQUEST",
+	}
+}
